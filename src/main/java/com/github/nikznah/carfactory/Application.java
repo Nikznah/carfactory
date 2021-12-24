@@ -22,8 +22,10 @@ public class Application {
 
         File csvData = new File("src/main/resources/parce.csv");
         FileReader fileReader = new FileReader(csvData);
+
         try {
             CSVParser csvParser = CSVParser.parse(fileReader, CSVFormat.newFormat(';'));
+
             for (CSVRecord csvRecord : csvParser) {
                 String brand = (csvRecord.get(0));
                 String color = (csvRecord.get(1));
@@ -41,6 +43,7 @@ public class Application {
     private static void initialize(String brand, String color, int enginePower, String type, boolean a1, boolean a2) {
         COLOR tmp;
         TYPE_ENGINE tmp2;
+
         if (color.equals(COLOR.RED.toString())) {
             tmp = COLOR.RED;
         } else if (color.equals(COLOR.GREEN.toString())) {
@@ -50,10 +53,13 @@ public class Application {
         } else {
             throw new IllegalArgumentException("Данного цвета нет в базе данных! " + color);
         }
+
         if (type.equals(TYPE_ENGINE.V8.toString())) {
             tmp2 = TYPE_ENGINE.V8;
-        } else {
+        } else if (type.equals(TYPE_ENGINE.V12.toString())) {
             tmp2 = TYPE_ENGINE.V12;
+        } else {
+            throw new IllegalArgumentException("Данный тип двигателя отсутствует! " + color);
         }
 
         if (brand.equals(BRANDS.BMW.toString())) {
@@ -68,6 +74,5 @@ public class Application {
         } else {
             throw new IllegalArgumentException("Ошибка! данная марка автомабиля, не продается!");
         }
-
     }
 }
