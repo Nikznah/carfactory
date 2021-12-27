@@ -17,7 +17,8 @@ public abstract class Car {
     private final boolean additionalOption2;
 
 
-    public Car(String brand, COLOR color, int enginePower, TYPE_ENGINE typeEngine, boolean additionalOption1, boolean additionalOption2) {
+    public Car(String brand, COLOR color, int enginePower, TYPE_ENGINE typeEngine,
+               boolean additionalOption1, boolean additionalOption2) {
         this.brand = brand;
         this.color = color;
         this.enginePower = enginePower;
@@ -25,8 +26,6 @@ public abstract class Car {
         this.additionalOption1 = additionalOption1;
         this.additionalOption2 = additionalOption2;
     }
-
-
 
     @Getter
     @RequiredArgsConstructor

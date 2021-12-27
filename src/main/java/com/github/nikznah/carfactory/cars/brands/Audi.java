@@ -20,7 +20,8 @@ public class Audi extends Car {
 
     }
 
-    public Audi(String brand, COLOR color, int enginePower, TYPE_ENGINE typeEngine, boolean additionalOption1, boolean additionalOption2) {
+    public Audi(String brand, COLOR color, int enginePower, TYPE_ENGINE typeEngine,
+                boolean additionalOption1, boolean additionalOption2) {
         super(brand, color, enginePower, typeEngine, additionalOption1, additionalOption2);
         setPrice(PRICE_AUDI);
     }
